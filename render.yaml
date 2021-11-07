@@ -9,7 +9,7 @@ services:
     name: findash
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn findash.wsgi:application"
+    startCommand: "gunicorn config.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
