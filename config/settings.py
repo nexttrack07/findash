@@ -34,13 +34,15 @@ DJANGO_APPS = [
 ]
 
 INTERNAL_APPS = [
-    'accounts'
+    'accounts',
+    'theme'
 ]
 
 EXTERNAL_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'tailwind',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + INTERNAL_APPS + EXTERNAL_APPS
@@ -62,7 +64,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -158,3 +160,8 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
+
+
+# Tailwind
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ["127.0.0.1"]
